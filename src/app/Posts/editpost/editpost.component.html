@@ -1,0 +1,20 @@
+<div class="container">
+    <h2>Edit post</h2>
+    <hr>
+    <form action="POST">
+        <div *ngIf = "error !== '' " class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        <div class="form-group">
+            <label for="postTitle"> Title </label>
+            <input type="text" class="form-control" name="editedPostTitle" [(ngModel)]="editedPostTitle" id="editedPostTitle" [value]="editedPostTitle">
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" name="editedPostContent" [(ngModel)]="editedPostContent" id="editedPostContent" rows="5">{{ editedPostContent }}</textarea>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="editedPostHeaderImage" [(ngModel)]="editedPostHeaderImage" id="editedPostHeaderImage" value="editedPostHeaderImage">
+        </div>
+        <button type="submit" (click)="UpdatePost()" class="btn btn-primary"> Submit </button>
+    </form>
+</div>

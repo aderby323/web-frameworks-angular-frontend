@@ -1,0 +1,54 @@
+<div class="container">
+    <div *ngIf = "error !== '' " class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    <h2>Select an operation</h2>
+    <h4>*Does not work. Wasn't able to finish.*</h4>
+    <div class="row">
+        <div class="col-md">
+            <button  style="position: absolute; left:    2; bottom:   0;" (click)="GetAllUsers()" type="submit">Get All Users</button>
+        </div>
+        <div class="col-md">
+            <label for="userID"> User ID </label>
+            <input type="text" class="form-control" name="userIDforSearchDelete" [(ngModel)]="userID" id="userIDforSearchDelete" placeholder="Enter User ID"> <br>
+            <button style="margin-right: 5px;" (click)="GetSpecificUser()" type="submit">Get Specific User</button>
+            <button style="margin-left: 5px;" (click)="DeleteUser()" type="submit">Delete User</button>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md">
+            <form>
+                <div class="form-group">
+                    <label for="userID"> User ID </label>
+                    <input type="text" class="form-control" name="userID" [(ngModel)]="user.userId" id="userID" placeholder="Enter your User ID">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="userFirstName"> First Name </label>
+                        <input type="text" class="form-control" name="firstName" [(ngModel)]="user.firstName" id="userFirstName" placeholder="Enter your first name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="userLastName"> Last Name </label>
+                        <input type="text" class="form-control" name="lastName" [(ngModel)]="user.lastName" id="userLastName" placeholder="Enter your last name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="userEmailAddress"> Email </label>
+                    <input type="email" class="form-control" name="emailAddress" [(ngModel)]="user.emailAddress" id="userEmailAddress" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="userID"> Password </label>
+                    <input type="password" class="form-control" name="password" [(ngModel)]="user.password" id="userPassword" placeholder="Enter your password">
+                </div>
+                <button (click)="PatchUser()" type="submit">Update User</button>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="container">
+    <h4>Result</h4>
+    <span>{{ response }}</span>
+</div>
+

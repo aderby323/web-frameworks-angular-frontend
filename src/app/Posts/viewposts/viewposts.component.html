@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="col-md-12">
+         <app-postitem *ngFor="let post of postArray" [post]="post" (PostDeleted)="DeletePost($event)" ></app-postitem>
+         <div *ngIf="noPosts" class="card text-center">
+            <div class="card-header"> Its's empty in here. How about making a new post?</div>
+            <div class="card-body">
+                <button type="button" onclick="CreatePost()">Create a Post</button>
+            </div>
+         </div>
+    </div>
+</div>
